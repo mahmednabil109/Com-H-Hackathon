@@ -72,21 +72,21 @@ class _DiscoveryPage extends State<DiscoveryPage> {
         title: isDiscovering
             ? Text('Discovering devices')
             : Text('Discovered devices'),
-        actions: <Widget>[
-          isDiscovering
-              ? FittedBox(
-                  child: Container(
-                    margin: new EdgeInsets.all(16.0),
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    ),
-                  ),
-                )
-              : IconButton(
-                  icon: Icon(Icons.replay),
-                  onPressed: _restartDiscovery,
-                )
-        ],
+        // actions: <Widget>[
+        //   isDiscovering
+        //       ? FittedBox(
+        //           child: Container(
+        //             margin: new EdgeInsets.all(16.0),
+        //             child: CircularProgressIndicator(
+        //               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        //             ),
+        //           ),
+        //         )
+        //       : IconButton(
+        //           icon: Icon(Icons.replay),
+        //           onPressed: _restartDiscovery,
+        //         )
+        // ],
       ),
       body: ListView.builder(
         itemCount: results.length,

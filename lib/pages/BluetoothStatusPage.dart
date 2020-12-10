@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:agry/pages/SeqPage.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:flutter/material.dart';
 // import 'package:scoped_model/scoped_model.dart';
@@ -8,6 +9,10 @@ import '../pages/SelectBondedDevicePage.dart';
 import '../pages/Tmp.dart';
 
 class BluetoothStatusPage extends StatefulWidget {
+  String name = "";
+  // BluetoothDevice server;
+  BluetoothStatusPage({Key key, this.name}) : super(key: key);
+
   @override
   _BluetoothStatusPageState createState() => _BluetoothStatusPageState();
 }
@@ -149,7 +154,8 @@ class _BluetoothStatusPageState extends State<BluetoothStatusPage> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return tmp(server: server);
+          return SeqPage(
+              name: widget.name != null ? widget.name : "ss", server: server);
         },
       ),
     );
